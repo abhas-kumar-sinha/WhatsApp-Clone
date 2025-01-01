@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Change the width of the scrollbar */
+::-webkit-scrollbar {
+    width: 9px; /* Width for vertical scrollbar */ /* Height for horizontal scrollbar */
+  }
+  
+  /* Change the color of the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Change the color of the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background: #323a3f;
+  }
+  
+  /* Change the color of the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
