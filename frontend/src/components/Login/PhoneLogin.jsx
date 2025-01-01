@@ -1,4 +1,4 @@
-import CountriesData from '../../Data/countriesData';
+import CountriesData from '../../Data/CountriesData.jsx';
 import { useUserContext } from '../../context/user.context';
 
 const PhoneLogin = () => {
