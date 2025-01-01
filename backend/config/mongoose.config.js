@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import "dotenv/config"
 
 function connect() {
-    mongoose.connect(process.env.MONGODB_LOCAL_URI)
+    mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("Conected to MongoDB")
     })

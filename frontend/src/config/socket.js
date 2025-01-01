@@ -9,7 +9,7 @@ export const initializeSocket = (projectId) => {
 
     console.log("Initializing socket connection...")
 
-    socketInstance = socket("http://localhost:3000/", {
+    socketInstance = socket(import.meta.env.VITE_API_EXPRESS_API_URL, {
         auth: {
             token: cookie.get('token')
         },

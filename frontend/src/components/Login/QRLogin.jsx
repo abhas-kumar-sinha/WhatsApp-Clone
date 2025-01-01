@@ -46,7 +46,7 @@ const QRLogin = () => {
             </div>
 
             <div className="msg-right h-[18rem] w-[16rem] ms-10">
-                <QRCodeGenerator loginLink={"http://localhost:5173/"}/>
+                <QRCodeGenerator loginLink={import.meta.env.VITE_API_FRONTEND_URL}/>
             </div>
         </div>
     </>
