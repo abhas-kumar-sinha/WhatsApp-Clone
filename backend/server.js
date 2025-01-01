@@ -78,7 +78,7 @@ io.on('connection', socket => {
 
             const prompt = message.replace('@ai', '');
 
-            const result = await generateResult(prompt);
+            let result = await generateResult(prompt);
 
             if (!result) {
                 result = "Sorry, I didn't get that. Can you please try again?"
