@@ -1,5 +1,5 @@
 import { useUserContext } from "../../context/user.context"
-import UniquecodeGenerator from "../../generator/uniquecodeGenerator";
+import UniquecodeGenerator from "../../generator/UniquecodeGenerator";
 import { useEffect } from "react";
 import Cookie from 'universal-cookie';
 
