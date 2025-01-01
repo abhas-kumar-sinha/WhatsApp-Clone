@@ -3,7 +3,7 @@ import cors from "cors";
 import UserModal from "./modals/user.modal.js";
 import cookieParser from "cookie-parser";
 import connect from "./config/mongoose.config.js";
-import homeRoutes from "./routes/Home.routes.js"
+import homeRoutes from "./routes/home.routes.js"
 import userRoutes from "./routes/user.routes.js"
 connect()
 
