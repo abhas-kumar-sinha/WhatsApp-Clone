@@ -80,6 +80,10 @@ io.on('connection', socket => {
 
             const result = await generateResult(prompt);
 
+            if (result.trim() === '') {
+                result = "Sorry, I didn't get that. Can you please try again?"
+            }
+
             const populatedNewMessage = {
                 senderId: {
                   _id: new mongoose.Types.ObjectId("6774dc1034d00b610be81b49"),
@@ -91,11 +95,9 @@ io.on('connection', socket => {
                 time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
               } 
 
-            await addAiMessage({senderId: socket.senderId,receiverId: socket.receiverId,message: result, aiSenderId: new mongoose.Types.ObjectId("6774dc1034d00b610be81b49")})
-
-
-
             io.to(socket.roomId).emit('message', populatedNewMessage)
+
+            await addAiMessage({senderId: socket.senderId,receiverId: socket.receiverId,message: result, aiSenderId: new mongoose.Types.ObjectId("6774dc1034d00b610be81b49")})
 
 
             return
