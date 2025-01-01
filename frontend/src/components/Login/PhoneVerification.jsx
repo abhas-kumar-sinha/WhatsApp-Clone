@@ -1,13 +1,12 @@
 import { useUserContext } from "../../context/user.context"
 import UniquecodeGenerator from "../../generator/UniquecodeGenerator";
 import { useEffect } from "react";
-import Cookie from 'universal-cookie';
+
 
 const PhoneVerification = () => {
 
-    const cookies = new Cookie();
 
-    const { phoneNumber, selectedCountry, setPhoneLogin, setPhoneVerify, isLoggedIn, setIsLoggedIn } = useUserContext();
+    const { phoneNumber, selectedCountry, setPhoneLogin, setPhoneVerify, isLoggedIn } = useUserContext();
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -15,12 +14,6 @@ const PhoneVerification = () => {
             setPhoneVerify(false);
         }
 
-        const newTimeout = setTimeout(() => {
-            setIsLoggedIn(true);
-            cookies.set('isLoggedIn', 'true', { path: '/' });
-        }, 3000);
-
-        return () => clearTimeout(newTimeout)
     }, [isLoggedIn]);
 
     function handleQRLogin() {
