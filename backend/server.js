@@ -80,7 +80,7 @@ io.on('connection', socket => {
 
             const result = await generateResult(prompt);
 
-            if (result.trim() === '') {
+            if (!result) {
                 result = "Sorry, I didn't get that. Can you please try again?"
             }
 
